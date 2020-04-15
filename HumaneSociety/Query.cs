@@ -182,6 +182,8 @@ namespace HumaneSociety
         //Isaac
         internal static Animal GetAnimalByID(int id)
         {
+            UserEmployee test = new UserEmployee();
+            var foundAnimal = test.SearchForAnimal(id);
             throw new NotImplementedException();
         }
 
