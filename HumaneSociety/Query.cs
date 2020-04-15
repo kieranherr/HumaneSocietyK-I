@@ -80,7 +80,7 @@ namespace HumaneSociety
             {
                 clientFromDb = db.Clients.Where(c => c.ClientId == clientWithUpdates.ClientId).Single();
             }
-            catch(InvalidOperationException e)
+            catch(InvalidOperationException)
             {
                 Console.WriteLine("No clients have a ClientId that matches the Client passed in.");
                 Console.WriteLine("No update have been made.");
@@ -196,18 +196,20 @@ namespace HumaneSociety
                         animalToUpdate.Name = update.Value;
                         break;
                     case 3:
-                        //animalToUpdate.Age = db.Animals.Where i dont know to how convert it into a int
+                        animalToUpdate.Age = int.Parse(update.Value);
                         break;
                     case 4:
                         animalToUpdate.Demeanor = update.Value;
                         break;
                     case 5:
-                        //animalToUpdate.KidFriendly = update.Value;
+                        animalToUpdate.KidFriendly = bool.Parse(update.Value);
                         break;
                     case 6:
-                        //animalToUpdate.PetFriendly = update.Value;
+                        animalToUpdate.PetFriendly = bool.Parse(update.Value);
+                        break;
                     case 7:
-                        //animalToUpdate.Weight = update.Value;
+                        animalToUpdate.Weight = int.Parse(update.Value);
+                        break;
                     case 8:
                         break;
                     default:
