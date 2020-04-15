@@ -164,6 +164,7 @@ namespace HumaneSociety
         //// TODO Items: ////
         
         // TODO: Allow any of the CRUD operations to occur here
+        //It will be Admin to CRUD operations on the Employee class. That's what Nevin told me.
         internal static void RunEmployeeQueries(Employee employee, string crudOperation)
         {
             throw new NotImplementedException();
@@ -181,7 +182,39 @@ namespace HumaneSociety
         }
 
         internal static void UpdateAnimal(int animalId, Dictionary<int, string> updates)
-        {            
+        {
+            Animal animalToUpdate = db.Animals.Where(flamingo => flamingo.AnimalId == animalId).SingleOrDefault();
+            foreach(KeyValuePair<int,string> update in updates)
+            {
+                switch (update.Key)
+                {
+                    // will ask about the commented out code during standup or after lunch.
+                    case 1:
+                        animalToUpdate.CategoryId = db.Categories.Where(s=>s.Name == update.Value).Single().CategoryId;
+                        break;
+                        case 2:
+                        animalToUpdate.Name = update.Value;
+                        break;
+                    case 3:
+                        //animalToUpdate.Age = db.Animals.Where i dont know to how convert it into a int
+                        break;
+                    case 4:
+                        animalToUpdate.Demeanor = update.Value;
+                        break;
+                    case 5:
+                        //animalToUpdate.KidFriendly = update.Value;
+                        break;
+                    case 6:
+                        //animalToUpdate.PetFriendly = update.Value;
+                    case 7:
+                        //animalToUpdate.Weight = update.Value;
+                    case 8:
+                        break;
+                    default:
+                        break;
+                }
+            }
+            
             throw new NotImplementedException();
         }
 
