@@ -173,6 +173,8 @@ namespace HumaneSociety
         // TODO: Animal CRUD Operations
         internal static void AddAnimal(Animal animal)
         {
+            UserEmployee test = new UserEmployee();
+            test.AddAnimal();
             throw new NotImplementedException();
         }
 
