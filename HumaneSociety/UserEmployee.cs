@@ -217,7 +217,7 @@ namespace HumaneSociety
             return animals;
         }       
 
-        private void RemoveAnimal()
+        public void RemoveAnimal()
         {
             var updates = UserInterface.GetAnimalSearchCriteria();
             var animals = Query.SearchForAnimalsByMultipleTraits(updates).ToList();

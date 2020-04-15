@@ -171,6 +171,7 @@ namespace HumaneSociety
         }
 
         // TODO: Animal CRUD Operations
+        //Kieran
         internal static void AddAnimal(Animal animal)
         {
             UserEmployee test = new UserEmployee();
@@ -178,11 +179,13 @@ namespace HumaneSociety
             throw new NotImplementedException();
         }
 
+        //Isaac
         internal static Animal GetAnimalByID(int id)
         {
             throw new NotImplementedException();
         }
 
+        //Kieran
         internal static void UpdateAnimal(int animalId, Dictionary<int, string> updates)
         {
             Animal animalToUpdate = db.Animals.Where(flamingo => flamingo.AnimalId == animalId).SingleOrDefault();
@@ -222,8 +225,11 @@ namespace HumaneSociety
             throw new NotImplementedException();
         }
 
+        //Kieran
         internal static void RemoveAnimal(Animal animal)
         {
+            UserEmployee test = new UserEmployee();
+            test.RemoveAnimal();
             throw new NotImplementedException();
         }
         
