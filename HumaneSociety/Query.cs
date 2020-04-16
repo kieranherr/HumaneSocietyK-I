@@ -185,7 +185,7 @@ namespace HumaneSociety
             UserEmployee test = new UserEmployee();
             var foundAnimal = test.SearchForAnimal(id);
             throw new NotImplementedException();
-        }
+         }
 
         //Kieran
         internal static void UpdateAnimal(int animalId, Dictionary<int, string> updates)
@@ -242,13 +242,18 @@ namespace HumaneSociety
         }
          
         // TODO: Misc Animal Things
+        //Kieran
         internal static int GetCategoryId(string categoryName)
         {
+            Animal animal = db.Animals.SingleOrDefault();
+            animal.CategoryId = db.Categories.Single().CategoryId;
             throw new NotImplementedException();
         }
         
         internal static Room GetRoom(int animalId)
         {
+            Animal animalRoom = db.Animals.Where(s => s.AnimalId == animalId).SingleOrDefault();
+
             throw new NotImplementedException();
         }
         
@@ -270,6 +275,7 @@ namespace HumaneSociety
 
         internal static void UpdateAdoption(bool isAdopted, Adoption adoption)
         {
+
             throw new NotImplementedException();
         }
 
